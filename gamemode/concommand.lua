@@ -37,6 +37,12 @@ function buyEntity(ply, cmd, args)
 
 end
 
+function maxAmmo(ply)
+	ply:GiveAmmo(ply:GetActiveWeapon():GetPrimaryAmmoType(),99999,true)
+end
+concommand.Add("maxAmmo", maxAmmo)
+
+
 function resetScore(ply)
 	ply:SetNWInt("playerExp",0)
 	ply:SetNWInt("playerLvl",0)

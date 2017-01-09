@@ -90,8 +90,9 @@ function GM:PlayerDeath(victim, inflictor, attacker)
 
 	attacker:SetNWInt("playerExp", attacker:GetNWInt("playerExp") + 101)
 
-	attacker:SetFrags(attacker:Frags() + 1)
-
+	if(attacker:Frags() != nil) then
+		attacker:SetFrags(attacker:Frags() + 1)
+	end
 	checkForLevel(attacker)
 
 end
@@ -116,13 +117,14 @@ end
 
 
  -- Game Menu
-function GM:ShowSpare2(ply)
-
+ function GM:ShowSpare1(ply)
 	local WalkSpeedPlus = ply:GetNWInt("playerWalkSpd") + 200
-	local RunSpeedPlus = (ply:GetNWInt("playerWalkSpd") + 200) * 1.4
+ 	local RunSpeedPlus = (ply:GetNWInt("playerWalkSpd") + 200) * 1.4
+ 	ply:SetWalkSpeed(WalkSpeedPlus)
+ 	ply:SetRunSpeed(RunSpeedPlus)
+ end
+function GM:ShowSpare2(ply)
 	ply:ConCommand("open_game_menu")
-	ply:SetWalkSpeed(WalkSpeedPlus)
-	ply:SetRunSpeed(RunSpeedPlus)
 end
 
 

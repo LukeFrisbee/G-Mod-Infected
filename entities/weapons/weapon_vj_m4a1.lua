@@ -19,15 +19,16 @@ SWEP.ViewModel					= "models/weapons/cstrike/c_rif_m4a1.mdl"
 SWEP.WorldModel					= "models/weapons/w_rif_m4a1.mdl"
 SWEP.HoldType 					= "ar2"
 SWEP.ViewModelFlip				= false -- Flip the model? Usally used for CS:S models
-SWEP.Spawnable					= true
-SWEP.AdminSpawnable				= false
+SWEP.Spawnable					= false
+SWEP.AdminSpawnable				= true
 	-- Primary Fire ---------------------------------------------------------------------------------------------------------------------------------------------
-SWEP.Primary.Damage				= 99999999 -- Damage
+SWEP.Primary.Damage				= 30 -- Damage
 SWEP.Primary.PlayerDamage		= "Double" -- Only applies for players | "Same" = Same as self.Primary.Damage, "Double" = Double the self.Primary.Damage OR put a number to be different from self.Primary.Damage
-SWEP.Primary.Force				= 99999999 -- Force applied on the object the bullet hits
-SWEP.Primary.ClipSize			= 20 -- Max amount of bullets per clip
-SWEP.Primary.Recoil				= 0.3 -- How much recoil does the player get?
-SWEP.Primary.Delay				= 0.3 -- Time until it can shoot again
+SWEP.Primary.Force				= 9999999 -- Force applied on the object the bullet hits
+SWEP.Primary.ClipSize			= 100000 -- Max amount of bullets per clip
+SWEP.Primary.Recoil				= 0.05 -- How much recoil does the player get?
+SWEP.Primary.Delay				= 0.01 -- Time until it can shoot again
+
 SWEP.Primary.Automatic			= true -- Is it automatic?
 SWEP.Primary.Ammo				= "SMG1" -- Ammo type
 SWEP.Primary.Sound				= {"Weapon_M4A1.Single"}
@@ -40,6 +41,7 @@ SWEP.PrimaryEffects_ShellType = "VJ_Weapon_RifleShell1"
 SWEP.DelayOnDeploy 				= 1 -- Time until it can shoot again after deploying the weapon
 	-- Reload Settings ---------------------------------------------------------------------------------------------------------------------------------------------
 SWEP.Reload_TimeUntilAmmoIsSet	= 1.8 -- Time until ammo is set to the weapon
+
 SWEP.Reload_TimeUntilFinished	= 2.2 -- How much time until the player can play idle animation, shoot, etc.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 function SWEP:CustomOnFireAnimationEvent(pos,ang,event,options)

@@ -83,12 +83,13 @@ function HUD()
 	end
 
 	-- AMMO : Primary Ammo
-
-	if (client:GetActiveWeapon():Clip1() != -1) then
-		draw.SimpleText(client:GetActiveWeapon():Clip1(), "HUDAMMO",ScrH() + 640, ScrH() - 88, Color(255,255,255,255),TEXT_ALIGN_RIGHT,0)
-		draw.SimpleText(client:GetAmmoCount(client:GetActiveWeapon():GetPrimaryAmmoType()), "HUDAMMOT",ScrH() + 655, ScrH() - 55, Color(255,255,255,255),0,0)
-	else
-		draw.SimpleText(client:GetAmmoCount(client:GetActiveWeapon():GetPrimaryAmmoType()), "HUDAMMO", ScrH() + 555, ScrH() - 88, Color(255,255,255,255),0,0)
+	if (client:GetActiveWeapon():Clip1() != nil) then
+		if (client:GetActiveWeapon():Clip1() != -1) then
+			draw.SimpleText(client:GetActiveWeapon():Clip1(), "HUDAMMO",ScrH() + 640, ScrH() - 88, Color(255,255,255,255),TEXT_ALIGN_RIGHT,0)
+			draw.SimpleText(client:GetAmmoCount(client:GetActiveWeapon():GetPrimaryAmmoType()), "HUDAMMOT",ScrH() + 655, ScrH() - 55, Color(255,255,255,255),0,0)
+		else
+			draw.SimpleText(client:GetAmmoCount(client:GetActiveWeapon():GetPrimaryAmmoType()), "HUDAMMO", ScrH() + 555, ScrH() - 88, Color(255,255,255,255),0,0)
+		end
 	end
 
 	-- AMMO : Secondary Ammo
