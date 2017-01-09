@@ -186,6 +186,21 @@ function addButtons(Menu)
 
 			end
 		end
+
+		-- Shop : SKS
+		local weaponsArr= {}
+		weaponsArr[2] = {"models/weapons/world/rifles/sks.mdl" , "fas2_sks" , "SKS- FA:S", "200"}
+
+		for k, v in pairs(weaponsArr) do
+			local icon = vgui.Create("SpawnIcon", weaponList)
+			icon:SetModel(v[1])
+			icon:SetToolTip(v[3].."\nCost: "..v[4])
+			weaponList:Add(icon)
+			icon.DoClick = function(icon)
+				LocalPlayer():ConCommand("buy_gun "..v[2])
+			end
+		end
+
 	end
 end
 
