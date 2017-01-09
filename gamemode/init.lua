@@ -64,8 +64,8 @@ function GM:PlayerSpawn(ply)
 	ply:Flashlight(true)
 	ply:AllowFlashlight(true)
 	ply:Give("fas2_m1911")
-	ply:Give("weapon_physgun")
-	ply:Give("weapon_physcannon")
+	ply:Give("fas2_dv2")
+	ply:Give("fas2_ifak")
 	ply:SetupHands()
 end
 
@@ -117,7 +117,12 @@ end
 
  -- Game Menu
 function GM:ShowSpare2(ply)
+
+	local WalkSpeedPlus = ply:GetNWInt("playerWalkSpd") + 200
+	local RunSpeedPlus = (ply:GetNWInt("playerWalkSpd") + 200) * 1.4
 	ply:ConCommand("open_game_menu")
+	ply:SetWalkSpeed(WalkSpeedPlus)
+	ply:SetRunSpeed(RunSpeedPlus)
 end
 
 
