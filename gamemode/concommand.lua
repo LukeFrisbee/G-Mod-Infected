@@ -58,6 +58,7 @@ concommand.Add("buy_entity", buyEntity)
 function buyGun(ply, cmd, args)
 	local weaponPrices = {}
 	weaponPrices[1] = {"fas2_deagle", "100"}
+	weaponPrices[2] = {"fas2_sks", "200"}
 
 	for k,v in pairs(weaponPrices) do
 		if(args[1] == v[1]) then
