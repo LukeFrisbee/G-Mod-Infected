@@ -1,0 +1,11 @@
+"infected"
+{
+	"base"		"base"
+	"title"		"infected"
+	"maps"		""
+	"menusystem"	"1"
+	"settings"
+	{
+
+	}
+}
