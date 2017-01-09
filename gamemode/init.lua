@@ -77,10 +77,21 @@ function GM:OnNPCKilled(npc, attacker, inflictor)
 	checkForLevel(attacker)
 end
 
-function GM:ScaleNPCDamage(npc, HITGROUP_GENERIC, dmginfo)
-	dmginfo:GetAttacker():SetNWInt("playerPoint", dmginfo:GetAttacker():GetNWInt("playerPoint") + dmginfo:GetDamage())
+function GM:ScaleNPCDamage(npc, HITGROUP_HEAD, dmginfo)
+	dmginfo:GetAttacker():SetNWInt("playerPoint", dmginfo:GetAttacker():GetNWInt("playerPoint") + 100)
 end
 
+function GM:ScaleNPCDamage(npc, HITGROUP_CHEST, dmginfo)
+	dmginfo:GetAttacker():SetNWInt("playerPoint", dmginfo:GetAttacker():GetNWInt("playerPoint") + 60)
+end
+
+function GM:ScaleNPCDamage(npc, HITGROUP_STOMACH, dmginfo)
+	dmginfo:GetAttacker():SetNWInt("playerPoint", dmginfo:GetAttacker():GetNWInt("playerPoint") + 60)
+end
+
+function GM:ScaleNPCDamage(npc, HITGROUP_GENERIC, dmginfo)
+	dmginfo:GetAttacker():SetNWInt("playerPoint", dmginfo:GetAttacker():GetNWInt("playerPoint") + 50)
+end
 
 
 
@@ -128,7 +139,12 @@ function GM:ShowSpare2(ply)
 end
 
 
-
+function GM:KeyPress(ply,IN_RUN)
+	local WalkSpeedPlus = ply:GetNWInt("playerWalkSpd") + 200
+	local RunSpeedPlus = (ply:GetNWInt("playerWalkSpd") + 200) * 1.4
+	ply:SetWalkSpeed(WalkSpeedPlus)
+	ply:SetRunSpeed(RunSpeedPlus)
+end
 
 function GM:PlayerDisconnected(ply)
 	ply:SetPData("playerLvl", ply:GetNWInt("playerLvl"))
