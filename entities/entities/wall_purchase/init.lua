@@ -25,17 +25,15 @@ end
 function ENT:Use(activator, caller)
 	local ammoType = activator:GetActiveWeapon():GetPrimaryAmmoType()
 
-	if(activator:GetNWInt("playerPoint") > 1250) then
-		if (activator:HasWeapon("fas2_m14")) then
-			activator:GiveAmmo(60, "7.62x51MM", false)
-			activator:SetNWInt("playerPoint", activator:GetNWInt("playerPoint") - 625)
-		else
-			activator:SetNWInt("playerPoint", activator:GetNWInt("playerPoint") - 1250)
-			activator:Give("fas2_m14")
-		end
-	else
-		ply:PrintMessage(HUD_PRINTTALK, "Not Enough Money!")
+	if(activator:GetNWInt("playerPoint") > 625) && (activator:HasWeapon("fas2_m14")) then
+		activator:GiveAmmo(60, "7.62x51MM", false)
+		activator:SetNWInt("playerPoint", activator:GetNWInt("playerPoint") - 625)
 	end
+	if(activator:GetNWInt("playerPoint") > 1250) && !(activator:HasWeapon("fas2_m14")) then
+		activator:SetNWInt("playerPoint", activator:GetNWInt("playerPoint") - 1250)
+		activator:Give("fas2_m14")
+	end
+	//activator:PrintMessage(HUD_PRINTTALK, "Not Enough Money!")
 end
 
 function ENT:Touch()

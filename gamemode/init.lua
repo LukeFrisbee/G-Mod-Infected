@@ -90,7 +90,7 @@ function GM:ScaleNPCDamage(npc, HITGROUP_STOMACH, dmginfo)
 end
 
 function GM:ScaleNPCDamage(npc, HITGROUP_GENERIC, dmginfo)
-	dmginfo:GetAttacker():SetNWInt("playerPoint", dmginfo:GetAttacker():GetNWInt("playerPoint") + 50)
+	dmginfo:GetAttacker():SetNWInt("playerPoint", dmginfo:GetAttacker():GetNWInt("playerPoint") + 10)
 end
 
 

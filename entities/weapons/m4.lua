@@ -10,7 +10,7 @@ SWEP.Instructions	= "Power Assult Rifle"
    SWEP.Icon               = "vgui/ttt/icon_m16"
    SWEP.IconLetter         = "w"
 SWEP.Spawnable			= true
-SWEP.AdminSpawnable		= true
+SWEP.AdminSpawnable		= false
 
 SWEP.UseHands           = true
 SWEP.ViewModel             = "models/weapons/cstrike/c_rif_m4a1.mdl"
@@ -29,7 +29,7 @@ SWEP.CSMuzzleFlashes	    = true
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
-			
+
 SWEP.Slot				= 3
 SWEP.SlotPos			= 1
 SWEP.DrawAmmo			= false
@@ -45,13 +45,13 @@ function SWEP:PrimaryAttack()
 	self:EmitSound( "Weapon_M4A1.Single" )
 	self:ShootEffects( self )
 	self.Owner:ViewPunch( Angle( -1, 0, 0 ) )
-	
+
 	if (!SERVER) then return end
-	
+
 end
 
 function SWEP:SecondaryAttack()
-	
+
 end
 
 function SWEP:ShouldDropOnDie()

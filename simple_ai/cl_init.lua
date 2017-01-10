@@ -1,4 +1,4 @@
--- Zombie Spawner
+-- BARRICADE
 
 include("shared.lua")
 

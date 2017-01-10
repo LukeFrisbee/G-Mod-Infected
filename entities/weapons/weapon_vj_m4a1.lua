@@ -19,8 +19,8 @@ SWEP.ViewModel					= "models/weapons/cstrike/c_rif_m4a1.mdl"
 SWEP.WorldModel					= "models/weapons/w_rif_m4a1.mdl"
 SWEP.HoldType 					= "ar2"
 SWEP.ViewModelFlip				= false -- Flip the model? Usally used for CS:S models
-SWEP.Spawnable					= false
-SWEP.AdminSpawnable				= true
+SWEP.Spawnable					= true
+SWEP.AdminSpawnable				= false
 	-- Primary Fire ---------------------------------------------------------------------------------------------------------------------------------------------
 SWEP.Primary.Damage				= 30 -- Damage
 SWEP.Primary.PlayerDamage		= "Double" -- Only applies for players | "Same" = Same as self.Primary.Damage, "Double" = Double the self.Primary.Damage OR put a number to be different from self.Primary.Damage

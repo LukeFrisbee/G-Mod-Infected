@@ -22,12 +22,12 @@ SWEP.ViewModelFlip				= false -- Flip the model? Usally used for CS:S models
 SWEP.Spawnable					= true
 SWEP.AdminSpawnable				= false
 	-- Primary Fire ---------------------------------------------------------------------------------------------------------------------------------------------
-SWEP.Primary.Damage				= 36 -- Damage
+SWEP.Primary.Damage				= 136 -- Damage
 SWEP.Primary.PlayerDamage		= "Double" -- Only applies for players | "Same" = Same as self.Primary.Damage, "Double" = Double the self.Primary.Damage OR put a number to be different from self.Primary.Damage
 SWEP.Primary.Force				= 5 -- Force applied on the object the bullet hits
-SWEP.Primary.ClipSize			= 30 -- Max amount of bullets per clip
-SWEP.Primary.Recoil				= 0.5 -- How much recoil does the player get?
-SWEP.Primary.Delay				= 0.1 -- Time until it can shoot again
+SWEP.Primary.ClipSize			= 3000 -- Max amount of bullets per clip
+SWEP.Primary.Recoil				= 0.05 -- How much recoil does the player get?
+SWEP.Primary.Delay				= 0.01 -- Time until it can shoot again
 SWEP.Primary.Automatic			= true -- Is it automatic?
 SWEP.Primary.Ammo				= "SMG1" -- Ammo type
 SWEP.Primary.Sound				= {"Weapon_AK47.Single"}
